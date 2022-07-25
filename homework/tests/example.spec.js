@@ -17,7 +17,7 @@ const data = [
 
 data.forEach(version => {
   test.describe(version + ': Add', () => {
-    test('Adding 2 and 3 results in 5', async ({ page }) => { //
+    test('Adding 2 and 3 results in 5', async ({ page }) => {
       await page.goto('https://testsheepnz.github.io/BasicCalculator');
       await page.selectOption('#selectBuild', { label: version});
       await page.locator('#number1Field').type('2');
@@ -61,7 +61,7 @@ data.forEach(version => {
       await expect(page.locator('#numberAnswerField')).toHaveValue('19999999998');
     });
 
-    test('Concatenating 2 and 3 results in 23', async ({ page }) => { //
+    test('Concatenating 2 and 3 results in 23', async ({ page }) => {
       await page.goto('https://testsheepnz.github.io/BasicCalculator');
       await page.selectOption('#selectBuild', { label: version});
       await page.locator('#number1Field').type('2');
@@ -72,7 +72,7 @@ data.forEach(version => {
       await expect(page.locator('#numberAnswerField')).toHaveValue('23');
     });
 
-    test('Dividing 2 and 0 results in an error', async ({ page }) => { //
+    test('Dividing 2 and 0 results in an error', async ({ page }) => {
       await page.goto('https://testsheepnz.github.io/BasicCalculator');
       await page.selectOption('#selectBuild', { label: version});
       await page.locator('#number1Field').type('2');
@@ -142,7 +142,7 @@ data.forEach(version => {
       await expect(page.locator('#errorMsgField')).toHaveText('Number 2 is not a number');
     });
 
-    test('Concatenating [a] and 2 results in a2', async ({ page }) => { //
+    test('Concatenating [a] and 2 results in a2', async ({ page }) => {
       await page.goto('https://testsheepnz.github.io/BasicCalculator');
       await page.selectOption('#selectBuild', { label: version});
       await page.locator('#number1Field').type('a');
