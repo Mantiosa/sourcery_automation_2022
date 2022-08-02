@@ -272,12 +272,5 @@ data.forEach(version => {
       await selectBuildVersion(page, version);
       await numberField2Enabled(page, numberField2Selector);
     });
-
-
-
-
-
-
-
   });
 });
